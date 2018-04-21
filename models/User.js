@@ -4,10 +4,6 @@ const Schema = mongoose.Schema;
 //Schema
 const UserSchema = new Schema({
   name: {
-    first: {type: String, required: true},
-    last: {type: String, required: true},
-  },
-  userName: {
     type: String,
     required: true,
   },
@@ -15,7 +11,11 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  myWorkOuts: [{type: Number, ref: 'User'}],
+  password: {
+    type: String,
+    required: true,
+  },
+  myWorkOuts: [{type: Number}],
 });
 
 module.exports = User = mongoose.model('users', UserSchema);
