@@ -16,6 +16,7 @@ const ProfileSchema = new Schema({
   },
   bio: {
     type: String,
+    required: true,
   },
   hobbies: {
     type: [String],
