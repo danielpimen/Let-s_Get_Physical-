@@ -19,3 +19,11 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
     })
     .catch(err => res.status(404).json(err));
 });
+//Create User Profile
+router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+  //Get Fields
+  const profileFields = {};
+  profileFields.user = req.user.id;
+  if (req.body.handle) profileFields.handle = req.body.handble;
+});
+module.exports = router;
