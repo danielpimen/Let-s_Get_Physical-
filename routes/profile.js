@@ -7,10 +7,14 @@ const validateProfileInput = require('../validation/profile');
 const Profile = require('../models/Profile');
 const User = require('../models/User');
 
+router.get('/test', (req, res) => {
+  res.json({msg: 'It Works'});
+});
 //Get api/profile
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   const errors = {};
   Profile.findOne({user: req.user.id})
+    .populate('user', ['name', 'avatar'])
     .then(profile => {
       if (!profile) {
         errors.noprofile = 'No Profile Found';
@@ -20,6 +24,7 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
     })
     .catch(err => res.status(404).json(err));
 });
+
 //Create or Edit User Profile
 router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   const {errors, isValid} = validateProfileInput(req.body);
@@ -30,7 +35,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   //Get Fields
   const profileFields = {};
   profileFields.user = req.user.id;
-  if (req.body.handle) profileFields.handle = req.body.handble;
+  if (req.body.handle) profileFields.handle = req.body.handle;
   if (req.body.location) profileFields.location = req.body.location;
   if (req.body.bio) profileFields.bio = req.body.bio;
   if (typeof req.body.hobbies !== 'undefined') {
