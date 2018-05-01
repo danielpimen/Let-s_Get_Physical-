@@ -14,7 +14,7 @@ router.get('/test', (req, res) => {
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   const errors = {};
   Profile.findOne({user: req.user.id})
-    .populate('user', ['name', 'avatar'])
+    .populate('users', ['name', 'avatar'])
     .then(profile => {
       if (!profile) {
         errors.noprofile = 'No Profile Found';
@@ -23,6 +23,38 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
       res.json(profile);
     })
     .catch(err => res.status(404).json(err));
+});
+
+router.get('/all', (req, res) => {
+  const errors = {};
+  Profile.find()
+    .populate('user', ['name', 'avatar'])
+    .then(profiles => {
+      if (!profiles) {
+        errors.noprofile = 'There are no profiles doge';
+        return res.status(404).json(errors);
+      }
+      res.json(profiles);
+    })
+    .catch(err => res.status(404).json(err));
+});
+
+//Get profile/handle/:handle
+//Get Profile by handle/name
+router.get('/handle/:handle', (req, res) => {
+  const errors = {};
+  Profile.findOne({handle: req.params.handle})
+    .populate('user', ['name', 'avatar'])
+    .then(profile => {
+      if (!profile) {
+        errors.noprofile = 'No Profile Exists';
+        res.status(404).json(errors);
+      }
+      res.json(profile);
+    })
+    .catch(err => {
+      res.status(404).json(err);
+    });
 });
 
 //Create or Edit User Profile
