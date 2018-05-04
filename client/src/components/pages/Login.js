@@ -2,8 +2,30 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 class Login extends Component {
-  state = {};
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: '',
+      errors: {},
+    };
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
+  }
+  onChange(e) {
+    this.setState({[e.target.name]: e.target.value});
+  }
 
+  onSubmit(e) {
+    e.preventDefault();
+    const newUser = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2,
+    };
+    console.log(newUser);
+  }
   render() {
     return (
       <div>
@@ -55,16 +77,38 @@ class Login extends Component {
         </div>
         <div className="container">
           <div className="row">
-            <div id="main" className="col-lg-12">
-              {/* <h4 style="text-align: center"></h4> */}
-              <br />
-              <p>
-                Let's Get Physical is a fully customizable workout app that
-                allows the user to input the amount of time they would like to
-                work out, body parts the user would like to work out and the
-                equipment the user has available. Workouts will provided that
-                take into account the information the user entered.
-              </p>
+            <div className="login">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-8 m-auto">
+                    <h1 className="display-4 text-center">Log In</h1>
+                    <p className="lead text-center">
+                      Sign in to see your profile
+                    </p>
+                    <form>
+                      <input
+                        placeholder="Email Address"
+                        name="email"
+                        type="email"
+                        value={this.state.email}
+                        onChange={this.onChange}
+                      />
+
+                      <input
+                        placeholder="Password"
+                        name="password"
+                        type="password"
+                        value={this.state.password}
+                        onChange={this.onChange}
+                      />
+                      <input
+                        type="submit"
+                        className="btn btn-info btn-block mt-4"
+                      />
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="row">
