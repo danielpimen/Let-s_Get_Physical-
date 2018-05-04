@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class UserProfile extends Component {
   state = {};
@@ -15,37 +16,37 @@ class UserProfile extends Component {
             </div>
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <a
-                  href="home.html"
+                <Link
+                  to="/"
                   type="button"
                   className="btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
-                  {" "}
-                  Home{" "}
-                </a>
+                  {' '}
+                  Home{' '}
+                </Link>
               </li>
               <li>
-                <a
-                  href="login.html"
+                <Link
+                  to="/login"
                   type="button"
                   className=" btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
-                  {" "}
-                  Login{" "}
-                </a>
+                  {' '}
+                  Login{' '}
+                </Link>
               </li>
               <li>
-                <a
-                  href="user.html"
+                <Link
+                  to="/userProfile"
                   type="button"
                   className=" btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
-                  {" "}
-                  User{" "}
-                </a>
+                  {' '}
+                  User{' '}
+                </Link>
               </li>
             </ul>
           </div>
@@ -70,15 +71,15 @@ class UserProfile extends Component {
           <div
             className="col-lg-12"
             style={{
-              textAlign: "center",
-              backgroundColor: "black",
-              color: "gray",
-              width: "100%",
-              position: "fixed",
+              textAlign: 'center',
+              backgroundColor: 'black',
+              color: 'gray',
+              width: '100%',
+              position: 'fixed',
               left: 0,
               bottom: 0,
-              paddingTop: "25px",
-              paddingBottom: "25px"
+              paddingTop: '25px',
+              paddingBottom: '25px',
             }}
           >
             Let's Get Physical &copy; 2018

@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from 'react-router-dom';
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 export const Home = props => (
   <div>
     <nav className="navbar navbar-inverse">
       <div className="container-fluid">
         <div className="navbar-header">
-          <a className="navbar-brand" style={{ textAlign: "center" }}>
+          <a className="navbar-brand" style={{textAlign: 'center'}}>
             <strong>Let's Get Physical!</strong>
           </a>
         </div>
@@ -18,8 +18,8 @@ export const Home = props => (
               className="btn navbar-btn btn-danger"
               id="navbar-link"
             >
-              {" "}
-              Home{" "}
+              {' '}
+              Home{' '}
             </Link>
           </li>
           <li>
@@ -29,8 +29,8 @@ export const Home = props => (
               className=" btn navbar-btn btn-danger"
               id="navbar-link"
             >
-              {" "}
-              Login{" "}
+              {' '}
+              Login{' '}
             </Link>
           </li>
           <li>
@@ -40,8 +40,8 @@ export const Home = props => (
               className=" btn navbar-btn btn-danger"
               id="navbar-link"
             >
-              {" "}
-              User{" "}
+              {' '}
+              User{' '}
             </Link>
           </li>
         </ul>
@@ -50,7 +50,7 @@ export const Home = props => (
     <div className="container">
       <div className="row">
         <div id="main" className="col-lg-6">
-          <h1 style={{ textAlign: "center" }}>Welcome</h1>
+          <h1 style={{textAlign: 'center'}}>Welcome</h1>
           <br />
           <p>
             Let's Get Physical is a fully customizable workout app that allows
@@ -64,7 +64,7 @@ export const Home = props => (
           <img
             className="img-responsive"
             src="https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&h=350"
-            style={{ width: "100%" }}
+            style={{width: '100%'}}
           />
         </div>
       </div>
@@ -73,15 +73,15 @@ export const Home = props => (
       <div
         className="col-lg-12"
         style={{
-          textAlign: "center",
-          backgroundColor: "black",
-          color: "gray",
-          width: "100%",
-          position: "fixed",
+          textAlign: 'center',
+          backgroundColor: 'black',
+          color: 'gray',
+          width: '100%',
+          position: 'fixed',
           left: 0,
           bottom: 0,
-          paddingTop: "25px",
-          paddingBottom: "25px"
+          paddingTop: '25px',
+          paddingBottom: '25px',
         }}
       >
         Project Awesome &copy; 2018

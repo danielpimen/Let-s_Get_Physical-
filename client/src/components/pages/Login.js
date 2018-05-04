@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class Login extends Component {
   state = {};
@@ -10,43 +11,43 @@ class Login extends Component {
           <nav className="navbar navbar-inverse">
             <div className="container-fluid">
               <div className="navbar-header">
-                <a className="navbar-brand" style={{ textAlign: "center" }}>
+                <a className="navbar-brand" style={{textAlign: 'center'}}>
                   <strong>Let's Get Physical!</strong>
                 </a>
               </div>
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <a
-                    href="home.html"
+                  <Link
+                    to="/"
                     type="button"
                     className="btn navbar-btn btn-danger"
                     id="navbar-link"
                   >
-                    {" "}
-                    Home{" "}
-                  </a>
+                    {' '}
+                    Home{' '}
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="login.html"
+                  <Link
+                    to="/login"
                     type="button"
                     className=" btn navbar-btn btn-danger"
                     id="navbar-link"
                   >
-                    {" "}
-                    Login{" "}
-                  </a>
+                    {' '}
+                    Login{' '}
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="user-input.html"
+                  <Link
+                    to="/UserProfile"
                     type="button"
                     className=" btn navbar-btn btn-danger"
                     id="navbar-link"
                   >
-                    {" "}
-                    User{" "}
-                  </a>
+                    {' '}
+                    User{' '}
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -70,15 +71,15 @@ class Login extends Component {
             <div
               className="col-lg-12"
               style={{
-                textAlign: "center",
-                backgroundColor: "black",
-                color: "gray",
-                width: "100%",
-                position: "fixed",
+                textAlign: 'center',
+                backgroundColor: 'black',
+                color: 'gray',
+                width: '100%',
+                position: 'fixed',
                 left: 0,
                 bottom: 0,
-                paddingTop: "25px",
-                paddingBottom: "25px"
+                paddingTop: '25px',
+                paddingBottom: '25px',
               }}
             >
               Project Awesome &copy; 2018
