@@ -11,10 +11,22 @@ class UserInput extends Component {
       password2: '',
       errors: {},
     };
+    this.onSubmit = this.onSubmit.bind(this);
   }
   onChange(e) {
     this.setState({[e.target.name]: e.target.value});
   }
+  onSubmit(e) {
+    e.preventDefault();
+    const newUser = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2,
+    };
+    console.log(newUser);
+  }
+
   render() {
     return (
       <div>
@@ -67,61 +79,68 @@ class UserInput extends Component {
           Please Enter Username, Password and Email to Create an Account
         </h4>
         <div className="container">
-          <div className="row">
-            <div id="main" className="col-lg-12">
-              <div className="input-group" style={{width: '100%'}}>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Username"
-                  id="username"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
-              <br />
-              <div className="input-group" style={{width: '100%'}}>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Email"
-                  id="email"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
-              <br />
-              <div className="input-group" style={{width: '100%'}}>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Password"
-                  id="password"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
-              <br />
-              <div className="input-group" style={{width: '100%'}}>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Confirm Password"
-                  id="passwordconfirmation"
-                  name="password2"
-                  value={this.state.password2}
-                  onChange={this.onChange.bind(this)}
-                />
+          <form onSubmit={this.onSubmit}>
+            <div className="row">
+              <div id="main" className="col-lg-12">
+                <div className="input-group" style={{width: '100%'}}>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Username"
+                    id="username"
+                    name="name"
+                    value={this.state.name}
+                    onChange={this.onChange.bind(this)}
+                  />
+                </div>
+                <br />
+                <div className="input-group" style={{width: '100%'}}>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Email"
+                    id="email"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.onChange.bind(this)}
+                  />
+                </div>
+                <br />
+                <div className="input-group" style={{width: '100%'}}>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Password"
+                    id="password"
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.onChange.bind(this)}
+                  />
+                </div>
+                <br />
+                <div className="input-group" style={{width: '100%'}}>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Confirm Password"
+                    id="passwordconfirmation"
+                    name="password2"
+                    value={this.state.password2}
+                    onChange={this.onChange.bind(this)}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <br />
-          <button type="submit" className="btn btn-danger btn-block" id="login">
-            Submit
-          </button>
+            <br />
+            <button
+              type="submit"
+              className="btn btn-danger btn-block"
+              id="login"
+              onSubmit={this.onSubmit}
+            >
+              Submit
+            </button>
+          </form>
         </div>
         <div className="row">
           <div
