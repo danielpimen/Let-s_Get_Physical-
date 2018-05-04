@@ -2,8 +2,19 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 class UserInput extends Component {
-  state = {};
-
+  constructor() {
+    super();
+    this.state = {
+      name: '',
+      email: '',
+      password: '',
+      password2: '',
+      errors: {},
+    };
+  }
+  onChange(e) {
+    this.setState({[e.target.name]: e.target.value});
+  }
   render() {
     return (
       <div>
@@ -64,6 +75,9 @@ class UserInput extends Component {
                   className="form-control"
                   placeholder="Username"
                   id="username"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.onChange.bind(this)}
                 />
               </div>
               <br />
@@ -73,6 +87,9 @@ class UserInput extends Component {
                   className="form-control"
                   placeholder="Email"
                   id="email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.onChange.bind(this)}
                 />
               </div>
               <br />
@@ -82,6 +99,9 @@ class UserInput extends Component {
                   className="form-control"
                   placeholder="Password"
                   id="password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.onChange.bind(this)}
                 />
               </div>
               <br />
@@ -91,6 +111,9 @@ class UserInput extends Component {
                   className="form-control"
                   placeholder="Confirm Password"
                   id="passwordconfirmation"
+                  name="password2"
+                  value={this.state.password2}
+                  onChange={this.onChange.bind(this)}
                 />
               </div>
             </div>
