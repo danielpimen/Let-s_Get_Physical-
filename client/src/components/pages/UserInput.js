@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import classnames from 'classnames';
+import {connect} from 'react-redux';
+import {registerUser} from '../../actions/authActions';
 
 class UserInput extends Component {
   constructor() {
@@ -14,6 +16,7 @@ class UserInput extends Component {
       errors: {},
     };
     this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
   onChange(e) {
     this.setState({[e.target.name]: e.target.value});
@@ -26,10 +29,12 @@ class UserInput extends Component {
       password: this.state.password,
       password2: this.state.password2,
     };
-    axios
+
+    this.props.registerUser(newUser);
+    /*     axios
       .post('/users/register', newUser)
       .then(res => console.log(res.data))
-      .catch(err => this.setState({errors: err.response.data}));
+      .catch(err => this.setState({errors: err.response.data})); */
   }
 
   render() {
@@ -191,4 +196,4 @@ class UserInput extends Component {
   }
 }
 
-export default UserInput;
+export default connect(null, {registerUser})(UserInput);

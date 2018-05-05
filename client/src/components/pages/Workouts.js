@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
 
 export default class Workout extends Component {
   render() {
@@ -19,8 +19,8 @@ export default class Workout extends Component {
                   className="btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
-                  {" "}
-                  Home{" "}
+                  {' '}
+                  Home{' '}
                 </a>
               </li>
               <li>
@@ -30,8 +30,8 @@ export default class Workout extends Component {
                   className=" btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
-                  {" "}
-                  Login{" "}
+                  {' '}
+                  Login{' '}
                 </a>
               </li>
               <li>
@@ -41,8 +41,8 @@ export default class Workout extends Component {
                   className=" btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
-                  {" "}
-                  User{" "}
+                  {' '}
+                  User{' '}
                 </a>
               </li>
             </ul>
@@ -56,10 +56,7 @@ export default class Workout extends Component {
           </div>
           <div className="row">
             <div className="col-md-4">
-              <img
-                src="https://consequenceofsound.files.wordpress.com/2018/03/nicolas-cage-superman-teen-titans-animated.png?w=807"
-                className="img-responsive"
-              />
+              <img src="" className="img-responsive" alt="workouts" />
             </div>
             <div className="col-md-6">Saved Workouts</div>
           </div>
@@ -68,15 +65,15 @@ export default class Workout extends Component {
           <div
             className="col-lg-12 some-foobar-element"
             style={{
-              textAlign: "center",
-              backgroundColor: "black",
-              color: "gray",
-              width: "100%",
-              position: "fixed",
+              textAlign: 'center',
+              backgroundColor: 'black',
+              color: 'gray',
+              width: '100%',
+              position: 'fixed',
               left: 0,
               bottom: 0,
-              paddingTop: "25px",
-              paddingBottom: "25px"
+              paddingTop: '25px',
+              paddingBottom: '25px',
             }}
           >
             Let's Get Physical &copy; 2018
