@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import classnames from 'classnames';
+import {Redirect} from 'react-router';
 
 class UserInput extends Component {
   constructor() {
@@ -11,7 +12,7 @@ class UserInput extends Component {
       email: '',
       password: '',
       password2: '',
-      errors: {},
+      errors: false,
     };
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -28,11 +29,12 @@ class UserInput extends Component {
     };
     axios
       .post('/users/register', newUser)
-      .then(res => console.log(res.data))
+      .then(res => this.setState({errors: true}))
       .catch(err => this.setState({errors: err.response.data}));
   }
 
   render() {
+    const {from} = this.props.location.state || '/';
     const {errors} = this.state;
     return (
       <div>
@@ -167,6 +169,7 @@ class UserInput extends Component {
               Submit
             </button>
           </form>
+          {errors && <Redirect to={from || '/login'} />}
         </div>
         <div className="row">
           <div
