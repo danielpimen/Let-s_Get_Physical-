@@ -41,7 +41,7 @@ export const Home = props => (
               id="navbar-link"
             >
               {' '}
-              User{' '}
+              Register{' '}
             </Link>
           </li>
         </ul>

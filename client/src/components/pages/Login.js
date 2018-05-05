@@ -34,7 +34,7 @@ class Login extends Component {
       setAuthToken(token);
       const decoded = jwt_decode(token);
       console.log(decoded);
-      <Redirect to="/workoutselector" />;
+      this.setState({errors: true});
     });
   }
   render() {
@@ -119,7 +119,7 @@ class Login extends Component {
                         className="btn btn-info btn-block mt-4"
                       />
                     </form>
-                    {errors && <Redirect to={from || '/workouts'} />}
+                    {errors && <Redirect to={from || '/workoutselector'} />}
                   </div>
                 </div>
               </div>
