@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {Redirect} from 'react-router';
+import axios from 'axios';
+import setAuthToken from './utils/setAuthToken';
+import jwt_decode from 'jwt-decode';
 
 class Login extends Component {
   constructor() {
@@ -7,7 +11,7 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      errors: {},
+      errors: false,
     };
     this.onSubmit = this.onSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -18,13 +22,24 @@ class Login extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    const newUser = {
+    const userData = {
       email: this.state.email,
       password: this.state.password,
     };
-    console.log(newUser);
+    console.log(userData);
+
+    axios.post('/users/login', userData).then(res => {
+      const {token} = res.data;
+      localStorage.setItem('jwtToken', token);
+      setAuthToken(token);
+      const decoded = jwt_decode(token);
+      console.log(decoded);
+      <Redirect to="/workoutselector" />;
+    });
   }
   render() {
+    const {from} = this.props.location.state || '/';
+    const {errors} = this.state;
     return (
       <div>
         <div>
@@ -104,6 +119,7 @@ class Login extends Component {
                         className="btn btn-info btn-block mt-4"
                       />
                     </form>
+                    {errors && <Redirect to={from || '/workouts'} />}
                   </div>
                 </div>
               </div>
