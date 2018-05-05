@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+import classnames from 'classnames';
 
 class UserInput extends Component {
   constructor() {
@@ -24,10 +26,14 @@ class UserInput extends Component {
       password: this.state.password,
       password2: this.state.password2,
     };
-    console.log(newUser);
+    axios
+      .post('/users/register', newUser)
+      .then(res => console.log(res.data))
+      .catch(err => this.setState({errors: err.response.data}));
   }
 
   render() {
+    const {errors} = this.state;
     return (
       <div>
         <nav className="navbar navbar-inverse">
@@ -76,7 +82,7 @@ class UserInput extends Component {
         </nav>
         <h4 style={{textAlign: 'center'}}>
           {' '}
-          Please Enter Username, Password and Email to Create an Account
+          Please Enter Name, Password and Email to Create an Account
         </h4>
         <div className="container">
           <form onSubmit={this.onSubmit}>
@@ -85,49 +91,69 @@ class UserInput extends Component {
                 <div className="input-group" style={{width: '100%'}}>
                   <input
                     type="text"
-                    className="form-control"
-                    placeholder="Username"
-                    id="username"
+                    className={classnames('form-control', {
+                      'is-invalid': errors.name,
+                    })}
+                    placeholder="Name"
+                    id="name"
                     name="name"
                     value={this.state.name}
                     onChange={this.onChange.bind(this)}
                   />
+                  {errors.name && (
+                    <div className="invalid-feedback">{errors.name}</div>
+                  )}
                 </div>
                 <br />
                 <div className="input-group" style={{width: '100%'}}>
                   <input
                     type="text"
-                    className="form-control"
+                    className={classnames('form-control', {
+                      'is-invalid': errors.email,
+                    })}
                     placeholder="Email"
                     id="email"
                     name="email"
                     value={this.state.email}
                     onChange={this.onChange.bind(this)}
                   />
+                  {errors.email && (
+                    <div className="invalid-feedback">{errors.email}</div>
+                  )}
                 </div>
                 <br />
                 <div className="input-group" style={{width: '100%'}}>
                   <input
                     type="text"
-                    className="form-control"
+                    className={classnames('form-control', {
+                      'is-invalid': errors.password,
+                    })}
                     placeholder="Password"
                     id="password"
                     name="password"
                     value={this.state.password}
                     onChange={this.onChange.bind(this)}
                   />
+                  {errors.password && (
+                    <div className="invalid-feedback">{errors.password}</div>
+                  )}
                 </div>
                 <br />
                 <div className="input-group" style={{width: '100%'}}>
                   <input
                     type="text"
-                    className="form-control"
+                    className={classnames('form-control', {
+                      'is-invalid': errors.password2,
+                    })}
                     placeholder="Confirm Password"
                     id="passwordconfirmation"
                     name="password2"
                     value={this.state.password2}
                     onChange={this.onChange.bind(this)}
                   />
+                  {errors.password && (
+                    <div className="invalid-feedback">{errors.password2}</div>
+                  )}
                 </div>
               </div>
             </div>

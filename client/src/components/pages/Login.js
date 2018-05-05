@@ -19,10 +19,8 @@ class Login extends Component {
   onSubmit(e) {
     e.preventDefault();
     const newUser = {
-      name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2,
     };
     console.log(newUser);
   }
@@ -85,7 +83,7 @@ class Login extends Component {
                     <p className="lead text-center">
                       Sign in to see your profile
                     </p>
-                    <form>
+                    <form onSubmit={this.onSubmit}>
                       <input
                         placeholder="Email Address"
                         name="email"
