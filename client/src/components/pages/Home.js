@@ -3,26 +3,26 @@ import {Link} from 'react-router-dom';
 
 export const Home = props => (
   <div>
-    <nav className="navbar navbar-inverse">
+    <nav className="navbar navbar-dark bg-dark">
       <div className="container-fluid">
         <div className="navbar-header">
-          <a className="navbar-brand" style={{textAlign: 'center'}}>
+          <a className="navbar-brand" style={{textAlign: 'center', color: 'white'  }}>
             <strong>Let's Get Physical!</strong>
           </a>
         </div>
-        <ul className="nav navbar-nav navbar-right">
-          <li>
+        <ul className="navbar navbar-right">
+        
             <Link
               to="/"
               type="button"
-              className="btn navbar-btn btn-danger"
+              className="btn btn-danger"
               id="navbar-link"
             >
               {' '}
               Home{' '}
             </Link>
-          </li>
-          <li>
+         
+       
             <Link
               to="/login"
               type="button"
@@ -32,8 +32,8 @@ export const Home = props => (
               {' '}
               Login{' '}
             </Link>
-          </li>
-          <li>
+          
+   
             <Link
               to="/userInput"
               type="button"
@@ -43,13 +43,13 @@ export const Home = props => (
               {' '}
               Register{' '}
             </Link>
-          </li>
+       
         </ul>
       </div>
     </nav>
     <div className="container">
       <div className="row">
-        <div id="main" className="col-lg-6">
+        <div id="main" className="col">
           <h1 style={{textAlign: 'center'}}>Welcome</h1>
           <br />
           <p>
@@ -60,7 +60,7 @@ export const Home = props => (
             the information the user entered.
           </p>
         </div>
-        <div className="col-lg-6">
+        <div className="col">
           <img
             className="img-responsive"
             src="https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&h=350"
@@ -71,11 +71,11 @@ export const Home = props => (
     </div>
     <div className="row">
       <div
-        className="col-lg-12"
+        className="col"
         style={{
           textAlign: 'center',
-          backgroundColor: 'black',
-          color: 'gray',
+          backgroundColor: '#343a40',
+          color: 'white',
           width: '100%',
           position: 'fixed',
           left: 0,
