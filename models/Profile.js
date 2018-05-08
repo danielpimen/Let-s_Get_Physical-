@@ -16,6 +16,7 @@ const ProfileSchema = new Schema({
   },
   bio: {
     type: String,
+    required: true,
   },
   hobbies: {
     type: [String],
@@ -25,3 +26,5 @@ const ProfileSchema = new Schema({
   },
   myWorkOuts: {type: [String]},
 });
+
+module.exports = Profile = mongoose.model('Profile', ProfileSchema);
