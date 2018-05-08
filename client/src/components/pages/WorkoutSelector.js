@@ -1,13 +1,36 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
+import axios from 'axios';
 
 export default class WorkoutSelector extends Component {
+  constructor() {
+    super();
+    this.state = {
+      time: '',
+      bodyPart: '',
+      equipment: '',
+      errors: {},
+    };
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+  onChange(e) {
+    this.setState({[e.target.name]: e.target.value});
+  }
+  onSubmit(e) {
+    e.preventDefault();
+    const selection = {};
+    /* axios
+      .post('/users/register', newUser)
+      .then(res => this.setState({errors: true}))
+      .catch(err => this.setState({errors: err.response.data}));
+      */
+  }
   render() {
     return (
       <div>
         <nav className="navbar navbar-inverse">
           <div className="container-fluid">
             <div className="navbar-header">
-              <a className="navbar-brand" style={{ textAlign: "center" }}>
+              <a className="navbar-brand" style={{textAlign: 'center'}}>
                 <strong>Let's Get Physical!</strong>
               </a>
             </div>
@@ -19,8 +42,8 @@ export default class WorkoutSelector extends Component {
                   className="btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
-                  {" "}
-                  Home{" "}
+                  {' '}
+                  Home{' '}
                 </a>
               </li>
               <li>
@@ -30,8 +53,8 @@ export default class WorkoutSelector extends Component {
                   className=" btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
-                  {" "}
-                  Login{" "}
+                  {' '}
+                  Login{' '}
                 </a>
               </li>
               <li>
@@ -41,14 +64,14 @@ export default class WorkoutSelector extends Component {
                   className=" btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
-                  {" "}
-                  User{" "}
+                  {' '}
+                  User{' '}
                 </a>
               </li>
             </ul>
           </div>
         </nav>
-        <div className="container" style={{ textAlign: "center" }}>
+        <div className="container" style={{textAlign: 'center'}}>
           <div className="row">
             <div className="btn-group">
               <button
@@ -153,15 +176,15 @@ export default class WorkoutSelector extends Component {
           <div
             className="col-lg-12"
             style={{
-              textAlign: "center",
-              backgroundColor: "black",
-              color: "gray",
-              width: "100%",
-              position: "fixed",
+              textAlign: 'center',
+              backgroundColor: 'black',
+              color: 'gray',
+              width: '100%',
+              position: 'fixed',
               left: 0,
               bottom: 0,
-              paddingTop: "25px",
-              paddingBottom: "25px"
+              paddingTop: '25px',
+              paddingBottom: '25px',
             }}
           >
             Project Awesome &copy; 2018
