@@ -34,7 +34,11 @@ app.use('/profile', profile);
 
 app.use(express.static('client/build'));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './client/public/index.html'));
+  const file =
+    process.env.NODE_ENV === 'production'
+      ? 'build/index.html'
+      : 'public/index.html';
+  res.sendFile(path.join(__dirname, 'client', file));
 });
 
 app.listen(PORT, function() {
