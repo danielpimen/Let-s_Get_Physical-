@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import {Redirect} from 'react-router';
+import {Link} from 'react-router-dom';
 
 export default class WorkoutSelector extends Component {
   constructor() {
@@ -36,37 +38,37 @@ export default class WorkoutSelector extends Component {
             </div>
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <a
-                  href="home.html"
+                <Link
+                  to="/"
                   type="button"
-                  className="btn navbar-btn btn-danger"
+                  className=" btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
                   {' '}
                   Home{' '}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="login.html"
+                <Link
+                  to="/login"
                   type="button"
                   className=" btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
                   {' '}
                   Login{' '}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="user-input.html"
+                <Link
+                  to="/userprofile"
                   type="button"
                   className=" btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
                   {' '}
                   User{' '}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

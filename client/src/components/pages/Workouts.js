@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
+import {Redirect} from 'react-router';
+import {Link} from 'react-router-dom';
 
 export default class Workout extends Component {
   render() {
@@ -13,37 +15,37 @@ export default class Workout extends Component {
             </div>
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <a
-                  href="home.html"
-                  type="button"
-                  className="btn navbar-btn btn-danger"
-                  id="navbar-link"
-                >
-                  {" "}
-                  Home{" "}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="login.html"
+                <Link
+                  to="/"
                   type="button"
                   className=" btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
-                  {" "}
-                  Login{" "}
-                </a>
+                  {' '}
+                  Home{' '}
+                </Link>
               </li>
               <li>
-                <a
-                  href="user.html"
+                <Link
+                  to="/login"
                   type="button"
                   className=" btn navbar-btn btn-danger"
                   id="navbar-link"
                 >
-                  {" "}
-                  User{" "}
-                </a>
+                  {' '}
+                  Login{' '}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/UserProfile"
+                  type="button"
+                  className=" btn navbar-btn btn-danger"
+                  id="navbar-link"
+                >
+                  {' '}
+                  User{' '}
+                </Link>
               </li>
             </ul>
           </div>
@@ -51,32 +53,28 @@ export default class Workout extends Component {
         <div className="container">
           <div className="row">
             <div id="main">
-              <h1>User Profile</h1>
+              <h1>Your Workouts</h1>
             </div>
           </div>
           <div className="row">
-            <div className="col-md-4">
-              <img
-                src="https://consequenceofsound.files.wordpress.com/2018/03/nicolas-cage-superman-teen-titans-animated.png?w=807"
-                className="img-responsive"
-              />
-            </div>
-            <div className="col-md-6">Saved Workouts</div>
+            <div className="col-md-2" />
+            <div className="col-md-6">Workouts : </div>
+            <div className="col-md-2" />
           </div>
         </div>
         <div className="row">
           <div
             className="col-lg-12 some-foobar-element"
             style={{
-              textAlign: "center",
-              backgroundColor: "black",
-              color: "gray",
-              width: "100%",
-              position: "fixed",
+              textAlign: 'center',
+              backgroundColor: 'black',
+              color: 'gray',
+              width: '100%',
+              position: 'fixed',
               left: 0,
               bottom: 0,
-              paddingTop: "25px",
-              paddingBottom: "25px"
+              paddingTop: '25px',
+              paddingBottom: '25px',
             }}
           >
             Let's Get Physical &copy; 2018
