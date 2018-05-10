@@ -38,15 +38,15 @@ class UserInput extends Component {
     const {errors} = this.state;
     return (
       <div>
-        <nav className="navbar navbar-inverse">
+        <nav className="navbar navbar-dark bg-dark">
           <div className="container-fluid">
             <div className="navbar-header">
-              <a className="navbar-brand" style={{textAlign: 'center'}}>
+              <a className="navbar-brand" style={{textAlign: 'center', color: 'white'}}>
                 <strong>Let's Get Physical!</strong>
               </a>
             </div>
             <ul className="nav navbar-nav navbar-right">
-              <li>
+              
                 <Link
                   to="/"
                   type="button"
@@ -56,8 +56,8 @@ class UserInput extends Component {
                   {' '}
                   Home{' '}
                 </Link>
-              </li>
-              <li>
+            
+              
                 <Link
                   to="/Login"
                   type="button"
@@ -67,8 +67,8 @@ class UserInput extends Component {
                   {' '}
                   Login{' '}
                 </Link>
-              </li>
-              <li>
+              
+            
                 <Link
                   to="/UserProfile"
                   type="button"
@@ -78,7 +78,7 @@ class UserInput extends Component {
                   {' '}
                   User{' '}
                 </Link>
-              </li>
+              
             </ul>
           </div>
         </nav>
@@ -176,8 +176,8 @@ class UserInput extends Component {
             className="col-lg-12"
             style={{
               textAlign: 'center',
-              backgroundColor: 'black',
-              color: 'gray',
+              backgroundColor: '#343a40',
+              color: 'white',
               width: '100%',
               position: 'fixed',
               left: 0,

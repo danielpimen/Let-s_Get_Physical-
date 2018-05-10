@@ -7,15 +7,15 @@ class UserProfile extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-inverse">
+        <nav className="navbar navbar-dark bg-dark">
           <div className="container-fluid">
             <div className="navbar-header">
-              <a className="navbar-brand">
+              <a className="navbar-brand" style={{textAlign: 'center', color: 'white'  }}>
                 <strong>Let's Get Physical</strong>
               </a>
             </div>
-            <ul className="nav navbar-nav navbar-right">
-              <li>
+            <ul className="navbar navbar-right">
+              
                 <Link
                   to="/"
                   type="button"
@@ -25,8 +25,8 @@ class UserProfile extends Component {
                   {' '}
                   Home{' '}
                 </Link>
-              </li>
-              <li>
+              
+              
                 <Link
                   to="/login"
                   type="button"
@@ -36,8 +36,8 @@ class UserProfile extends Component {
                   {' '}
                   Login{' '}
                 </Link>
-              </li>
-              <li>
+              
+              
                 <Link
                   to="/userProfile"
                   type="button"
@@ -47,33 +47,33 @@ class UserProfile extends Component {
                   {' '}
                   User{' '}
                 </Link>
-              </li>
+  
             </ul>
           </div>
         </nav>
         <div className="container">
           <div className="row">
             <div id="main">
-              <h1>User Profile</h1>
+              <h1 style={{marginLeft: 290}}>User Profile</h1>
             </div>
           </div>
           <div className="row">
-            <div className="col-md-4">
+            <div className="col">
               <img
                 src="https://consequenceofsound.files.wordpress.com/2018/03/nicolas-cage-superman-teen-titans-animated.png?w=807"
                 className="img-responsive"
               />
             </div>
-            <div className="col-md-6">Saved Workouts</div>
+            <div className="col">Saved Workouts</div>
           </div>
         </div>
         <div className="row">
           <div
-            className="col-lg-12"
+            className="col"
             style={{
               textAlign: 'center',
-              backgroundColor: 'black',
-              color: 'gray',
+              backgroundColor: '#343a40',
+              color: 'white',
               width: '100%',
               position: 'fixed',
               left: 0,
