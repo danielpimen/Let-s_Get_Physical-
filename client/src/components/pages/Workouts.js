@@ -1,8 +1,21 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 export default class Workout extends Component {
+  constructor() {
+    super();
+    axios
+      .get('/profile/test')
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+
   render() {
     return (
       <div>

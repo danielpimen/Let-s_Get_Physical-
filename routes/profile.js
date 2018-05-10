@@ -1,3 +1,5 @@
+// import Workout from '../client/src/components/pages/Workouts';
+
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
@@ -6,10 +8,15 @@ const validateProfileInput = require('../validation/profile');
 
 const Profile = require('../models/Profile');
 const User = require('../models/User');
+const WorkOut45 = require('../models/Workout');
 
 router.get('/test', (req, res) => {
-  res.json({msg: 'It Works'});
+  //res.json({msg: 'It Works'});
+  WorkOut45.find()
+    .then(docs => res.json(docs))
+    .catch(e => res.status(404).json(e));
 });
+
 //Get api/profile
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   const errors = {};
