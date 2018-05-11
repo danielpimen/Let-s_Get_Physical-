@@ -22,11 +22,11 @@ export default class Workout extends Component {
         <nav className="navbar navbar-dark bg-dark">
           <div className="container-fluid">
             <div className="navbar-header">
-              <a className="navbar-brand">
-                <strong>Let's Get Physical</strong>
+              <a className="navbar-brand" style={{textAlign: 'center', color: 'white'  }}>
+                <strong>Let's Get Physical!</strong>
               </a>
             </div>
-            <ul className="nav navbar-nav navbar-right">
+            <ul className="navbar navbar-right">
               
                 <Link
                   to="/"
@@ -64,20 +64,22 @@ export default class Workout extends Component {
           </div>
         </nav>
         <div className="container">
-          <div className="row">
+          <div className="row" style={{textAlign:'center'}}>
+          <div className="col">
             <div id="main">
               <h1>Your Workouts</h1>
             </div>
+            </div>
           </div>
-          <div className="row">
-            <div className="col-md-2" />
-            <div className="col-md-6">Workouts : </div>
-            <div className="col-md-2" />
+          <div className="row" style={{textAlign:'center'}}>
+            <div className="col" />
+            <div className="col">Workouts : </div>
+            <div className="col" />
           </div>
         </div>
         <div className="row">
           <div
-            className="col-lg-12 some-foobar-element"
+            className="col"
             style={{
               textAlign: 'center',
               backgroundColor: '#343a40',

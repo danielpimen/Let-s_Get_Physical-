@@ -48,7 +48,7 @@ export const Home = props => (
       </div>
     </nav>
     <div className="container">
-      <div className="row">
+      <div className="row text-center">
         <div id="main" className="col">
           <h1 style={{textAlign: 'center'}}>Welcome</h1>
           <br />
