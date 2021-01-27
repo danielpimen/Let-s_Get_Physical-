@@ -88,13 +88,13 @@ class Login extends Component {
             </div>
           </nav>
         </div>
-        <div className="container">
-          <div className="row">
+        {/* <div className="container"> */}
+          {/* <div className="row" > */}
             <div className="login">
               <div className="container">
                 <div className="row">
                   <div className="col-md-8 m-auto">
-                    <h1 className="display-4 text-center">Log In</h1>
+                    <h1 className="display text-center">Log In</h1>
                     <p className="lead text-center">
                       Sign in to see your profile
                     </p>
@@ -124,7 +124,7 @@ class Login extends Component {
                 </div>
               </div>
             </div>
-          </div>
+          {/* </div> */}
           <div className="row">
             <div
               className="col-lg-12"
@@ -143,7 +143,7 @@ class Login extends Component {
               Project Awesome &copy; 2018
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     );
   }
